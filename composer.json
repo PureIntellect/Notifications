@@ -1,0 +1,28 @@
+{
+    "name": "pureintellect/notifications",
+    "description": "Laravel Spark Notifications from the kiosk",
+    "license": "MIT",
+    "keywords" : [
+        "spark",
+        "kiosk",
+        "laravel",
+        "notifications"
+    ],
+    "authors": [
+        {
+            "name": "PureIntellect.Com",
+            "email": "support@pureintellect.com",
+            "homepage": "https://www.pureintellect.com"
+        }
+    ],
+    "homepage" : "https://github.com/pureintellect/notifications",
+    "require": {},
+    "autoload": {
+      "classmap": [
+        "src/"
+      ],
+      "psr-4" : {
+        "PureIntellect\\Notifications\\" : "src/"
+      }
+    }
+}
