@@ -30,7 +30,7 @@ Vue.component('spark-kiosk-notifications', {
          * Get all of the announcements.
          */
         getNotifications: function(){
-            this.$http.get('/pi/notifications/notifications')
+            axios.get('/pi/notifications/notifications')
                 .then(response => {
                     this.notifications = response.data;
                 });
@@ -40,7 +40,7 @@ Vue.component('spark-kiosk-notifications', {
          * Get all of the users.
          */
         getUsers: function(){
-            this.$http.get('/pi/notifications/get/users')
+            axios.get('/pi/notifications/get/users')
                 .then(response => {
                     this.users = response.data;
                 });
@@ -50,7 +50,7 @@ Vue.component('spark-kiosk-notifications', {
          * Create Notification.
          */
         createNotification: function(){
-            this.$http.post('/pi/notifications/notifications', this.newNotification)
+            axios.post('/pi/notifications/notifications', this.newNotification)
                 .then(response => {
                     this.newNotification = {};
                     this.getNotifications();
