@@ -1,7 +1,7 @@
 <?php namespace PureIntellect\Notifications\Controllers;
 
 use App\Http\Controllers\Controller;
-
+use Ramsey\Uuid\Uuid
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,7 +33,7 @@ class NotificationController extends Controller
     if(is_Array($request->user)){
       foreach ($request->user as $user) {
         $notification = new \Laravel\Spark\Notification;
-        $notification->id = \Illuminate\Support\Facades\Hash::make( time() . Auth::user()->id );
+        $notification->id = Uuid::uuid4();
         $notification->body = $request->input('body');
         $notification->user_id = $user['id'];
         $notification->action_text = $request->input('action_text');
