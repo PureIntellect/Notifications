@@ -38,7 +38,7 @@ Vue.component('spark-kiosk-notifications', {
     },
     methods: {
         /**
-         * Get all of the announcements.
+         * Get all of the notifications.
          */
         getNotifications: function(){
             axios.get('/pi/notifications/notifications')
