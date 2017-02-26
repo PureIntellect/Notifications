@@ -2,6 +2,7 @@
   <div class="panel-heading">Create Notification</div>
   <div class="panel-body">
     <div class="alert alert-info alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       Notifications you create here will be sent to the "Notifications" section of
       the notifications modal window for that specific user.
     </div>
@@ -10,10 +11,12 @@
       <div class="form-group">
         <label class="col-md-4 control-label">User</label>
         <div class="col-md-6">
-          <select class="form-control" name="user_id" v-model="newNotification.user_id">
-            <option value="">Choose User...</option>
-            <option v-for="usr in users" :value="usr.id">@{{ usr.name }}</option>
-          </select>
+          <v-select multiple
+            :options="users"
+            label="name"
+            v-model="newNotification.user_id"
+            name="user_id"
+            placeholder="Select A User"></v-select>
         </div>
       </div>
 

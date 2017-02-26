@@ -1,4 +1,16 @@
+import vSelect from 'vue-select'
+export default {
+  components: {vSelect},
+  props:[],
+  data() {
+    return {
+      selected: null,
+      options: ['foo','bar','baz']
+    }
+  }
+}
 Vue.component('spark-kiosk-notifications', {
+    components: { vSelect },
     props: [],
     data() {
         var notificationsCreateForm = function() {
