@@ -26,7 +26,7 @@ class NotificationController extends Controller
   {
     $this->validate($request, [
       'body'    =>  'required',
-      'user_id' =>  'required',
+      'user' =>  'required',
       'action_text' => 'required_with:action_url',
       'action_url'  => 'required_with:action_text',
     ]);
