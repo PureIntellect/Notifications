@@ -2,11 +2,11 @@
 
 Adds a notification panel to your Laravel Spark Kiosk, allowing you to send notifications to users. Original package created by vmitchell85 and can be found at https://github.com/vmitchell85/spark-kiosk-notify
 
-## Planned / Desired Features
+## Features
+ - Send Notifications through Kiosk
+ - Select Multiple Users
+ - Search for user (via name)
 
-- Send Notification on User's tab
-- Select Multiple Users
-- Search for users instead of listing? Listing all could be an issue if you have many users. (vue select2)
 
 ## Installation process
 
@@ -14,8 +14,11 @@ This package comes with predefined views and routes to use with your existing Sp
 
 In order to install the Spark Kiosk Notifications Package into your Spark application:
 
+**1. Install the Vue-Select Package from http://sagalbot.github.io/vue-select/**
 
-** Add the following to providers array in `config\app.php`**
+`npm install sagalbot/vue-select`
+
+**2. Add the following to providers array in `config\app.php`**
 
 `PureIntellect\Notifications\NotificationsServiceProvider::class,`
 
