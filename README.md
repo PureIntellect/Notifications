@@ -32,7 +32,7 @@ Add `require('./spark-kiosk-notifications.js');` to your `resources/assets/js/co
 
 **5. Compile the Javascript components**
 
-`gulp`
+`npm run production`
 
 **6. Add the HTML snippets**
 
