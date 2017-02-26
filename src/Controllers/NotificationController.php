@@ -30,12 +30,12 @@ class NotificationController extends Controller
       'action_text' => 'required_with:action_url',
       'action_url'  => 'required_with:action_text',
     ]);
-    if(is_Array($request->user_id)){
-      foreach ($request->user_id as $user_id) {
+    if(is_Array($request->user)){
+      foreach ($request->user as $user) {
         $notification = new \Laravel\Spark\Notification;
         $notification->id = \Illuminate\Support\Facades\Hash::make( time() . Auth::user()->id );
         $notification->body = $request->input('body');
-        $notification->user_id = $user_id;
+        $notification->user_id = $user['id'];
         $notification->action_text = $request->input('action_text');
         $notification->action_url = $request->input('action_url');
         $notification->created_by = Auth::user()->id;
@@ -43,10 +43,11 @@ class NotificationController extends Controller
       }
     }
     else {
+      $user = $request->input('user_id');
       $notification = new \Laravel\Spark\Notification;
       $notification->id = \Illuminate\Support\Facades\Hash::make( time() . Auth::user()->id );
       $notification->body = $request->input('body');
-      $notification->user_id = $request->input('user_id');
+      $notification->user_id = $user['id'];
       $notification->action_text = $request->input('action_text');
       $notification->action_url = $request->input('action_url');
       $notification->created_by = Auth::user()->id;
@@ -63,10 +64,10 @@ class NotificationController extends Controller
       'action_text' => 'required_with:action_url',
       'action_url'  => 'required_with:action_text',
     ]);
-
+    $user = $request->input('user_id');
     $notification = \Laravel\Spark\Notification::findOrFail($id);
     $notification->body = $request->input('body');
-    $notification->user_id = $request->input('user_id');
+    $notification->user_id = $user['id'];
     $notification->action_text = $request->input('action_text');
     $notification->action_url = $request->input('action_url');
     $notification->created_by = Auth::user()->id;

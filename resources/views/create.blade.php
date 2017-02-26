@@ -14,8 +14,8 @@
           <v-select multiple
             :options="users"
             label="name"
-            v-model="newNotification.user_id"
-            name="user_id"
+            v-model="newNotification.user"
+            name="user"
             placeholder="Select A User"></v-select>
         </div>
       </div>

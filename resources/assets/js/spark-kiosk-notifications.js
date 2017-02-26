@@ -5,7 +5,6 @@ export default {
   data() {
     return {
       selected: null,
-      options: ['foo','bar','baz']
     }
   }
 }
@@ -17,7 +16,7 @@ Vue.component('spark-kiosk-notifications', {
           return {
             id: '',
             body: '',
-            user_id:'',
+            user:'',
             action_text: '',
             action_url: '',
             created_by: '',
@@ -73,7 +72,7 @@ Vue.component('spark-kiosk-notifications', {
             this.updatingNotification = notification;
 
             this.updateForm.body = notification.body;
-            this.updateForm.user_id = notification.user_id;
+            this.updateForm.user = notification.user;
             this.updateForm.action_text = notification.action_text;
             this.updateForm.action_url = notification.action_url;
             this.updateForm.created_by = notification.created_by;

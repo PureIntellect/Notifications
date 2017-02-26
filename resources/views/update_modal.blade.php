@@ -14,7 +14,7 @@
             <div class="form-group">
               <label class="col-md-4 control-label">User</label>
               <div class="col-md-6">
-                <select class="form-control" name="user_id" v-model="updateForm.user_id">
+                <select class="form-control" name="user" v-model="updateForm.user">
                   <option value="">Choose User...</option>
                   <option v-for="usr in users" :value="usr.id">@{{ usr.name }}</option>
                 </select>
