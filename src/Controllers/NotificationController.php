@@ -1,7 +1,7 @@
 <?php namespace PureIntellect\Notifications\Controllers;
 
 use App\Http\Controllers\Controller;
-use Ramsey\Uuid\Uuid
+use Ramsey\Uuid\Uuid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
